@@ -1,0 +1,30 @@
+using System;
+namespace qwerty
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            bool isInt = false;
+            int result = 0;
+
+            while (!isInt)
+            {
+                testingIsInt(ref isInt, ref result);
+                if (!isInt)
+                {
+                    Console.WriteLine("Вы ввели не число");
+                }
+            }
+
+            Console.WriteLine($"\nВаше число - {result}");
+            Console.ReadKey();
+        }
+
+        static void testingIsInt(ref bool isInt, ref int result)
+        {
+            Console.Write("\nВведите число: ");
+            isInt = int.TryParse(Console.ReadLine(), out result);
+        }
+    }
+}
